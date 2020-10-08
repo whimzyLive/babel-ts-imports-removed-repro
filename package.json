@@ -3,18 +3,24 @@
   "version": "0.7.2",
   "license": "MIT",
   "scripts": {
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
-    "build": "npm run build:types && npm run build:js",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline"
+    "build": "babel src --extensions \".ts\" --out-dir lib"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.3",
     "@babel/core": "^7.8.3",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
     "@babel/preset-env": "^7.8.3",
-    "@babel/preset-typescript": "^7.8.3",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/node": "^14.11.5",
+    "babel-plugin-transform-typescript-metadata": "^0.3.0",
     "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "@nestjs/common": "^7.4.4",
+    "@nestjs/core": "^7.4.4",
+    "aws-sdk": "^2.769.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.6.3"
   }
 }
